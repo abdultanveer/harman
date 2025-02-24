@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "harman"
 include(":app")
+include(":app:lib")
