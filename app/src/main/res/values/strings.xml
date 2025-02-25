@@ -2,5 +2,7 @@
     <string name="app_name">harman</string>
     <string name="greeting">"Happy birthday "</string>
     <string name="signature_text">From Emma</string>
+    <string name="title_activity_dice_roller">DiceRollerActivity</string>
+    <string name="roll">Roll</string>
 
 </resources>
