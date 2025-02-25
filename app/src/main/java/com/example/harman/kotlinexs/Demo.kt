@@ -14,7 +14,7 @@ fun main() {
     var c = sum(10,20)
 
     println("I have $numberOfDogs dogs" + " and $numberOfCat cats")
-
+    throw  NullPointerException("crash demo")
     println("the sum is"+ sum(1,3))
 }
 

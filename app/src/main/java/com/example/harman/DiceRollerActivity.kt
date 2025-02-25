@@ -1,6 +1,7 @@
 package com.example.harman
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -28,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import com.example.harman.ui.theme.HarmanTheme
 
 class DiceRollerActivity : ComponentActivity() {
+    var TAG = DiceRollerActivity::class.java.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -43,6 +45,8 @@ class DiceRollerActivity : ComponentActivity() {
 @Preview
 @Composable
 fun DiceRollerApp() {
+   // throw NullPointerException("android crash")
+    Log.i("DiceRollerActivity","im in DiceRollerApp")
     DiceWithButtonAndImage(modifier = Modifier
         .fillMaxSize()
         .wrapContentSize(Alignment.Center)
@@ -52,6 +56,8 @@ fun DiceRollerApp() {
 
 @Composable
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
+    Log.w("DiceRollerActivity","im in DiceWithButtonAndImage")
+
     var result by remember { mutableStateOf(1) }
     val imageResource = when (result) {
         1 -> R.drawable.dice_1
@@ -71,7 +77,10 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
 
         )
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { result = (1..6).random() }) {
+        Button(onClick = { result = (1..6).random()
+            Log.v("DiceRollerActivity","button was clicked")
+
+        }) {
             Text(stringResource(R.string.roll))
         }
 
