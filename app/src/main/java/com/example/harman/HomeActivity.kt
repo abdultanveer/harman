@@ -1,5 +1,6 @@
 package com.example.harman
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -29,5 +30,10 @@ class HomeActivity : AppCompatActivity() {
         Snackbar.make(cl,"button was clicked",Snackbar.LENGTH_SHORT).show()
         var amount = amountet.text.toString()
         tipTv.text = amount
+    }
+
+    fun handleStart(view: View) {
+        var sIntent:Intent = Intent(this,MainActivity::class.java)
+        startActivity(sIntent)
     }
 }

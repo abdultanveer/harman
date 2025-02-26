@@ -21,11 +21,11 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:onClick="clickHandler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
         android:layout_marginBottom="33dp"
+        android:onClick="clickHandler"
         android:text="login"
         app:layout_constraintBottom_toTopOf="@+id/tvTip"
         app:layout_constraintStart_toStartOf="@+id/tvTip" />
@@ -39,4 +39,14 @@
         android:text="tip"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="47dp"
+        android:onClick="handleStart"
+        android:text="start"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnLogin"
+        app:layout_constraintStart_toEndOf="@+id/btnLogin" />
 </androidx.constraintlayout.widget.ConstraintLayout>
