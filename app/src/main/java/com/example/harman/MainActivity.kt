@@ -31,14 +31,14 @@ import com.example.harman.ui.theme.HarmanTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        var receivedData = intent.extras?.getString("tech")
         setContent {
             HarmanTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingText(message = "abdul", from = "android",
+                    GreetingText(message = "abdul", from = receivedData!!,
                         modifier = Modifier.padding(8.dp)
                     )
                 }
@@ -59,7 +59,7 @@ fun GreetingText(message: String, from:String,modifier: Modifier = Modifier) {
             textAlign = TextAlign.Center
 
         )
-        Text(text = stringResource(id = R.string.signature_text),
+        Text(text = from,
             modifier = Modifier
                 .padding(16.dp)
                 .align(alignment = Alignment.End))

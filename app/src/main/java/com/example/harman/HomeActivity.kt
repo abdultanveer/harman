@@ -35,6 +35,7 @@ class HomeActivity : AppCompatActivity() {
 
     fun handleStart(view: View) {
         var sIntent:Intent = Intent(this,MainActivity::class.java)//expplicit inttent
+        sIntent.putExtra("tech","android at harman")
         startActivity(sIntent)
     }
 
