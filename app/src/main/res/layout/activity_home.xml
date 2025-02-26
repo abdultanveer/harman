@@ -49,4 +49,13 @@
         android:text="start"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnLogin"
         app:layout_constraintStart_toEndOf="@+id/btnLogin" />
+
+    <Button
+        android:id="@+id/btnDial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dial"
+        android:onClick="handleDial"
+        tools:layout_editor_absoluteX="297dp"
+        tools:layout_editor_absoluteY="134dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

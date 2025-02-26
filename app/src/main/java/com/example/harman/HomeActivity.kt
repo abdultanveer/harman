@@ -1,6 +1,7 @@
 package com.example.harman
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -33,7 +34,12 @@ class HomeActivity : AppCompatActivity() {
     }
 
     fun handleStart(view: View) {
-        var sIntent:Intent = Intent(this,MainActivity::class.java)
+        var sIntent:Intent = Intent(this,MainActivity::class.java)//expplicit inttent
         startActivity(sIntent)
+    }
+
+    fun handleDial(view: View) {
+        var dIntent = Intent(Intent.ACTION_DIAL,Uri.parse("tel:9876543"))//implicit intent
+        startActivity(dIntent)
     }
 }
