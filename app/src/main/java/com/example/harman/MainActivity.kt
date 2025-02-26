@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -62,6 +63,7 @@ fun GreetingText(message: String, from:String,modifier: Modifier = Modifier) {
             modifier = Modifier
                 .padding(16.dp)
                 .align(alignment = Alignment.End))
+
     }
 
 
