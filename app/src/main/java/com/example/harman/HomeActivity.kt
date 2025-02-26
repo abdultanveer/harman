@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.harman.kotlinexs.Student
 import com.google.android.material.snackbar.Snackbar
 
 class HomeActivity : AppCompatActivity() {
@@ -25,6 +26,7 @@ var TAG = HomeActivity::class.java.simpleName
         Log.i(TAG,"created")
         tipTv = findViewById(R.id.tvTip)
         amountet = findViewById(R.id.etAmount)
+        //var myStudent:Student = Student("abdul",123,123,true)
     }
 
 
