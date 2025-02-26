@@ -3,6 +3,7 @@ package com.example.harman
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -16,15 +17,45 @@ import com.google.android.material.snackbar.Snackbar
 class HomeActivity : AppCompatActivity() {
     lateinit var tipTv:TextView
     lateinit var amountet:EditText
-
+var TAG = HomeActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
+        Log.i(TAG,"created")
         tipTv = findViewById(R.id.tvTip)
         amountet = findViewById(R.id.etAmount)
     }
+
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG,"started -get location updates")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.v(TAG,"resumed-restore email draft")
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.w(TAG,"paused-store data/state")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e(TAG,"stopped-write data")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(TAG,"destroyed--releasing resources")
+
+    }
+
+
 
     fun clickHandler(view: View) {
         val cl :ConstraintLayout = findViewById(R.id.constraintlyt)
