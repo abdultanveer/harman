@@ -1,5 +1,7 @@
 package com.example.harman
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -11,6 +13,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -19,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -51,6 +55,15 @@ fun GreetingText(message: String, from:String,modifier: Modifier = Modifier) {
     Column(
         verticalArrangement = Arrangement.Center,
     )  {
+        Row {
+            Button(onClick = { startMusicServvice() }) {
+                Text(text = "start")
+            }
+            Button(onClick = { stopMusicServvice() }) {
+                Text(text = "stop")
+            }
+        }
+
         Text(
             text = stringResource(R.string.greeting) + message, modifier = modifier,
             fontSize = 100.sp,
@@ -65,6 +78,12 @@ fun GreetingText(message: String, from:String,modifier: Modifier = Modifier) {
     }
 
 
+}
+
+fun stopMusicServvice() {
+}
+
+fun startMusicServvice(){
 }
 
 @Composable
