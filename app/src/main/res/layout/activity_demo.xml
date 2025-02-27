@@ -49,4 +49,14 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button4"
+
+        android:onClick="showNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="notify"
+        tools:layout_editor_absoluteX="246dp"
+        tools:layout_editor_absoluteY="216dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
