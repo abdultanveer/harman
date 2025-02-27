@@ -2,11 +2,13 @@ package com.example.harman
 
 import android.app.Service
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.IBinder
 import android.util.Log
 
 class MusicService : Service() {
 var TAG = MusicService::class.java.simpleName
+lateinit var  mediaPlayer:MediaPlayer
 
     override fun onCreate() {
         super.onCreate()
@@ -18,14 +20,15 @@ var TAG = MusicService::class.java.simpleName
 
         var imgUrl = intent?.extras?.getString("url")
         Log.i(TAG,"url is "+imgUrl)
-
+         mediaPlayer = MediaPlayer.create(this,R.raw.music)
+        mediaPlayer.start()
         return START_STICKY
     }
 
     override fun onDestroy() {
         super.onDestroy()
         Log.i(TAG,"music service destroyed")
-
+        mediaPlayer.stop()
     }
 
     override fun onBind(intent: Intent): IBinder {
