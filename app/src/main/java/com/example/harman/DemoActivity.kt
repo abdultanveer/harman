@@ -22,4 +22,11 @@ class DemoActivity : AppCompatActivity() {
         startService(mIntent)
       //  stopService(mIntent)
     }
+
+    fun stopMusicService(view: View) {
+        var mIntent = Intent(this,MusicService::class.java)
+
+         stopService(mIntent)
+
+    }
 }

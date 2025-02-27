@@ -9,12 +9,23 @@
 
     <Button
         android:id="@+id/button"
-        android:onClick="startMusicService"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="97dp"
         android:layout_marginTop="92dp"
+        android:onClick="startMusicService"
         android:text="start"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="79dp"
+        android:onClick="stopMusicService"
+        android:text="stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
