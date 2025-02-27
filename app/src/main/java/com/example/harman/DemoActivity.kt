@@ -19,6 +19,7 @@ class DemoActivity : AppCompatActivity() {
 
     fun startMusicService(view: View) {
         var mIntent = Intent(this,MusicService::class.java)
+        mIntent.putExtra("url","https://imgdownlo.com")
         startService(mIntent)
       //  stopService(mIntent)
     }

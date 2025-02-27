@@ -13,6 +13,15 @@ var TAG = MusicService::class.java.simpleName
         Log.i(TAG,"music service created")
     }
 
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+         super.onStartCommand(intent, flags, startId)
+
+        var imgUrl = intent?.extras?.getString("url")
+        Log.i(TAG,"url is "+imgUrl)
+
+        return START_STICKY
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         Log.i(TAG,"music service destroyed")
