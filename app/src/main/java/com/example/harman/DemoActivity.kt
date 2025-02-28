@@ -10,6 +10,7 @@ import android.content.ServiceConnection
 import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -17,6 +18,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.harman.network.MarsApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class DemoActivity : AppCompatActivity() {
 
@@ -32,6 +36,14 @@ class DemoActivity : AppCompatActivity() {
 
     }
 
+
+    private fun getMarsPhotos() {
+        GlobalScope.launch {
+            val listResult = MarsApi.retrofitService.getPhotos()
+            Log.i("Json received --",listResult.toString())
+
+        }
+    }
 
 
     fun startMusicService(view: View) {
@@ -109,5 +121,9 @@ class DemoActivity : AppCompatActivity() {
                 getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
+    }
+
+    fun getJson(view: View) {
+        getMarsPhotos()
     }
 }
