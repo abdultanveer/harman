@@ -19,6 +19,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.harman.network.MarsApi
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -38,8 +39,9 @@ class DemoActivity : AppCompatActivity() {
 
 
     private fun getMarsPhotos() {
-        GlobalScope.launch {
+        GlobalScope.launch(Dispatchers.Main) {
             val listResult = MarsApi.retrofitService.getPhotos()
+            scoretv.setText(listResult.get(0).toString())
             Log.i("Json received --",listResult.toString())
 
         }
