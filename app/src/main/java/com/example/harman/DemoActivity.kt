@@ -18,13 +18,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModelProvider
 import com.example.harman.network.MarsApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class DemoActivity : AppCompatActivity() {
-    var count = 0
+    lateinit var viewModel:DemoViewmodel
+
+
     private lateinit var mService: CricService
     lateinit var scoretv:TextView
     //im not invoking the constructor of cricscore service
@@ -32,9 +35,11 @@ class DemoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_demo)
+        viewModel = ViewModelProvider(this)[DemoViewmodel::class.java]
+
 
         scoretv = findViewById(R.id.textView)
-        scoretv.setText(""+count)
+        scoretv.setText(""+viewModel.count)
 
     }
 
@@ -131,7 +136,7 @@ class DemoActivity : AppCompatActivity() {
     }
 
     fun incrementCounter(view: View) {
-        count++
-        scoretv.setText(""+count)
+        viewModel.incrementCount()
+        scoretv.setText(""+viewModel.count)
     }
 }
