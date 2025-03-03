@@ -24,7 +24,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class DemoActivity : AppCompatActivity() {
-
+    var count = 0
     private lateinit var mService: CricService
     lateinit var scoretv:TextView
     //im not invoking the constructor of cricscore service
@@ -34,6 +34,7 @@ class DemoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_demo)
 
         scoretv = findViewById(R.id.textView)
+        scoretv.setText(""+count)
 
     }
 
@@ -127,5 +128,10 @@ class DemoActivity : AppCompatActivity() {
 
     fun getJson(view: View) {
         getMarsPhotos()
+    }
+
+    fun incrementCounter(view: View) {
+        count++
+        scoretv.setText(""+count)
     }
 }
